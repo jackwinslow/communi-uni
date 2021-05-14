@@ -754,7 +754,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <state key="normal" title="Communicate"/>
                                 <connections>
-                                    <segue destination="qfh-FC-7oF" kind="show" id="M2I-Kn-bqD"/>
+                                    <segue destination="qfh-FC-7oF" kind="show" identifier="ShowNewChat" id="M2I-Kn-bqD"/>
                                 </connections>
                             </button>
                         </subviews>

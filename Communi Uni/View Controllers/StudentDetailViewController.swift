@@ -27,6 +27,16 @@ class StudentDetailViewController: UIViewController {
         nameLabel.text = student.firstname
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowNewChat" {
+            print("doing segue ****************************")
+            let destination = segue.destination as! ContainerViewController
+            destination.user2Name = student.firstname
+            destination.user2UID = student.uid
+            destination.hidesBottomBarWhenPushed = true
+        }
+    }
 
     @IBAction func doneButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
