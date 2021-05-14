@@ -26,6 +26,15 @@ class HomeViewController: UIViewController {
             self.collectionView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UICollectionViewCell, let indexPath = self.collectionView.indexPath(for: cell) {
+            print("doing segue ****************************")
+            let destination = segue.destination as! SchoolDetailViewController
+            destination.collegeName = schools.schoolArray[indexPath.row].name
+            destination.hidesBottomBarWhenPushed = true
+        }
+    }
 
 }
 
@@ -44,7 +53,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       return CGSize(width: 225, height: 180)
+       return CGSize(width: 245, height: 200)
     }
     
 }

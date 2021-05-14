@@ -8,15 +8,16 @@
 import UIKit
 
 class RecentlyAddedCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var view: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.contentView.layer.cornerRadius = 10
-        self.contentView.layer.shadowRadius = 5
-        self.contentView.layer.shadowOpacity = 0.3
-        self.contentView.layer.shadowOffset = .zero
+        view.layer.cornerRadius = 10
+        view.layer.shadowRadius = 5
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowOffset = .zero
     }
 }

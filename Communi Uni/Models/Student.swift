@@ -11,16 +11,21 @@ import Firebase
 class Student {
     var firstname: String
     var lastname: String
+    var school: String
+    var date: Date
     var uid: String
     var documentID: String
     
     var dictionary: [String: Any] {
-        return ["firstname": firstname, "lastname": lastname, "uid": uid]
+        let timeIntervalDate = date.timeIntervalSince1970
+        return ["firstname": firstname, "lastname": lastname, "school": school, "date": timeIntervalDate, "uid": uid]
     }
 
-    init(firstname: String, lastname: String, uid: String, documentID: String) {
+    init(firstname: String, lastname: String, school: String, date: Date, uid: String, documentID: String) {
         self.firstname = firstname
         self.lastname = lastname
+        self.school = school
+        self.date = date
         self.uid = uid
         self.documentID = documentID
     }
@@ -28,8 +33,11 @@ class Student {
     convenience init(dictionary: [String: Any]) {
         let firstname = dictionary["firstname"] as! String? ?? ""
         let lastname = dictionary["lastname"] as! String? ?? ""
+        let school = dictionary["school"] as! String? ?? ""
+        let timeIntervalDate = dictionary["date"] as! TimeInterval? ?? TimeInterval()
+        let date = Date(timeIntervalSince1970: timeIntervalDate)
         let uid = dictionary["uid"] as! String? ?? ""
         
-        self.init(firstname: firstname, lastname: lastname, uid: uid, documentID: "")
+        self.init(firstname: firstname, lastname: lastname, school: school, date: date, uid: uid, documentID: "")
     }
 }

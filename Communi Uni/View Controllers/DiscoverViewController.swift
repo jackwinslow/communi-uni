@@ -26,6 +26,16 @@ class DiscoverViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowSchoolDetail" {
+            print("doing segue ****************************")
+            let destination = segue.destination as! SchoolDetailViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.collegeName = schools.schoolArray[selectedIndexPath.row].name
+            destination.hidesBottomBarWhenPushed = true
+        }
+    }
+    
 
 }
 

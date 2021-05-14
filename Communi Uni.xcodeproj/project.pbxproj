@@ -32,6 +32,9 @@
 		CAA052E32647389D0095FC3D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA052E22647389D0095FC3D /* HomeViewController.swift */; };
 		CAA052E926473DD50095FC3D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA052E826473DD50095FC3D /* Utilities.swift */; };
 		CAA052EB264824FF0095FC3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA052EA264824FF0095FC3D /* LoginViewController.swift */; };
+		CABD23DE264EF85500061309 /* SchoolDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD23DD264EF85500061309 /* SchoolDetailViewController.swift */; };
+		CABD23E0264F174700061309 /* SchoolStudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD23DF264F174700061309 /* SchoolStudentTableViewCell.swift */; };
+		CABD23E6264F301A00061309 /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD23E5264F301A00061309 /* StudentDetailViewController.swift */; };
 		CAEA2695264B1B3600D8E520 /* MessageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEA2694264B1B3600D8E520 /* MessageListTableViewCell.swift */; };
 		CAEF7742264DF09F0011C1B6 /* RecentlyAddedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF7741264DF09F0011C1B6 /* RecentlyAddedCollectionViewCell.swift */; };
 		CAEF7748264DF9750011C1B6 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF7747264DF9750011C1B6 /* Student.swift */; };
@@ -66,6 +69,9 @@
 		CAA052E22647389D0095FC3D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CAA052E826473DD50095FC3D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		CAA052EA264824FF0095FC3D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CABD23DD264EF85500061309 /* SchoolDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailViewController.swift; sourceTree = "<group>"; };
+		CABD23DF264F174700061309 /* SchoolStudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolStudentTableViewCell.swift; sourceTree = "<group>"; };
+		CABD23E5264F301A00061309 /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
 		CAEA2694264B1B3600D8E520 /* MessageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListTableViewCell.swift; sourceTree = "<group>"; };
 		CAEF7741264DF09F0011C1B6 /* RecentlyAddedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyAddedCollectionViewCell.swift; sourceTree = "<group>"; };
 		CAEF7747264DF9750011C1B6 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
@@ -152,8 +158,8 @@
 				CA9D63FB26487BEC00A07E29 /* Models */,
 				CA27D1462648CD7700B9CD28 /* Messages */,
 				CAA052E5264738BC0095FC3D /* View Controllers */,
-				CA9D63F32648524700A07E29 /* HomeTabBarController.swift */,
 				CAEF7740264DF0700011C1B6 /* Cells */,
+				CA9D63F32648524700A07E29 /* HomeTabBarController.swift */,
 				CAA052CE26472E570095FC3D /* Main.storyboard */,
 				CAA052D126472E580095FC3D /* Assets.xcassets */,
 				CAA052D326472E580095FC3D /* LaunchScreen.storyboard */,
@@ -171,6 +177,8 @@
 				CAA052EA264824FF0095FC3D /* LoginViewController.swift */,
 				CAA052E22647389D0095FC3D /* HomeViewController.swift */,
 				CA9D63F526485C0500A07E29 /* DiscoverViewController.swift */,
+				CABD23DD264EF85500061309 /* SchoolDetailViewController.swift */,
+				CABD23E5264F301A00061309 /* StudentDetailViewController.swift */,
 				CA27D1432648CD1F00B9CD28 /* MessageListViewController.swift */,
 				CA27D1412648C78900B9CD28 /* ChatViewController.swift */,
 				CA9D63F926485C1B00A07E29 /* ProfileViewController.swift */,
@@ -191,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				CA9D640426487F9900A07E29 /* DiscoverTableViewCell.swift */,
+				CABD23DF264F174700061309 /* SchoolStudentTableViewCell.swift */,
 				CAEA2694264B1B3600D8E520 /* MessageListTableViewCell.swift */,
 				CAEF7741264DF09F0011C1B6 /* RecentlyAddedCollectionViewCell.swift */,
 			);
@@ -332,7 +341,9 @@
 			files = (
 				CAA052EB264824FF0095FC3D /* LoginViewController.swift in Sources */,
 				CAA052CD26472E570095FC3D /* WelcomeViewController.swift in Sources */,
+				CABD23E6264F301A00061309 /* StudentDetailViewController.swift in Sources */,
 				CA27D1482648CDC500B9CD28 /* Chat.swift in Sources */,
+				CABD23DE264EF85500061309 /* SchoolDetailViewController.swift in Sources */,
 				CA27D14A2648CDDD00B9CD28 /* Message.swift in Sources */,
 				CAEF774A264DF97F0011C1B6 /* Students.swift in Sources */,
 				CA27D1422648C78900B9CD28 /* ChatViewController.swift in Sources */,
@@ -349,6 +360,7 @@
 				CA27D1442648CD1F00B9CD28 /* MessageListViewController.swift in Sources */,
 				CA9D640326487D3A00A07E29 /* Schools.swift in Sources */,
 				CA9D63F22648365400A07E29 /* Constants.swift in Sources */,
+				CABD23E0264F174700061309 /* SchoolStudentTableViewCell.swift in Sources */,
 				CA9D640526487F9900A07E29 /* DiscoverTableViewCell.swift in Sources */,
 				CA9D640126487D3000A07E29 /* School.swift in Sources */,
 				CA9D63F626485C0500A07E29 /* DiscoverViewController.swift in Sources */,
