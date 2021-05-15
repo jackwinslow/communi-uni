@@ -12,7 +12,6 @@
 		CA27D1442648CD1F00B9CD28 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27D1432648CD1F00B9CD28 /* MessageListViewController.swift */; };
 		CA27D1482648CDC500B9CD28 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27D1472648CDC500B9CD28 /* Chat.swift */; };
 		CA27D14A2648CDDD00B9CD28 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27D1492648CDDD00B9CD28 /* Message.swift */; };
-		CA27D14C2648CF9800B9CD28 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27D14B2648CF9800B9CD28 /* Conversation.swift */; };
 		CA27D14E2648CFA200B9CD28 /* Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA27D14D2648CFA200B9CD28 /* Conversations.swift */; };
 		CA9D63F22648365400A07E29 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D63F12648365400A07E29 /* Constants.swift */; };
 		CA9D63F42648524700A07E29 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D63F32648524700A07E29 /* HomeTabBarController.swift */; };
@@ -47,7 +46,6 @@
 		CA27D1432648CD1F00B9CD28 /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		CA27D1472648CDC500B9CD28 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		CA27D1492648CDDD00B9CD28 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		CA27D14B2648CF9800B9CD28 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		CA27D14D2648CFA200B9CD28 /* Conversations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversations.swift; sourceTree = "<group>"; };
 		CA9D63F12648365400A07E29 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CA9D63F32648524700A07E29 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				CAEF7749264DF97F0011C1B6 /* Students.swift */,
 				CA9D640026487D3000A07E29 /* School.swift */,
 				CA9D640226487D3A00A07E29 /* Schools.swift */,
-				CA27D14B2648CF9800B9CD28 /* Conversation.swift */,
 				CA27D14D2648CFA200B9CD28 /* Conversations.swift */,
 			);
 			path = Models;
@@ -364,7 +361,6 @@
 				CA9D640526487F9900A07E29 /* DiscoverTableViewCell.swift in Sources */,
 				CA9D640126487D3000A07E29 /* School.swift in Sources */,
 				CA9D63F626485C0500A07E29 /* DiscoverViewController.swift in Sources */,
-				CA27D14C2648CF9800B9CD28 /* Conversation.swift in Sources */,
 				CAEF7742264DF09F0011C1B6 /* RecentlyAddedCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

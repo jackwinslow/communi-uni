@@ -15,8 +15,10 @@ import SDWebImage
 class ContainerViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var chatView: UIView!
+    var currentUserName = ""
     var user2Name = ""
     var user2UID = ""
+    var studentSchool = ""
     let chatViewController = ChatViewController()
     
     /// Required for the `MessageInputBar` to be visible
@@ -32,8 +34,10 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        chatViewController.currentUserName = currentUserName
         chatViewController.user2Name = user2Name
         chatViewController.user2UID = user2UID
+        chatViewController.studentSchool = studentSchool
         
         nameLabel.text = user2Name
         
@@ -45,6 +49,7 @@ class ContainerViewController: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
@@ -54,9 +59,12 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
     var currentUser: User = Auth.auth().currentUser!
     
+    var currentUserName: String?
+    
     var user2Name: String?
     var user2ImgUrl: String?
     var user2UID: String?
+    var studentSchool = ""
     
     private var docReference: DocumentReference?
     
@@ -90,9 +98,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     func createNewChat() {
         let users = [self.currentUser.uid, self.user2UID]
          let data: [String: Any] = [
-             "users":users
+            "userName": currentUserName, "userUID": self.currentUser.uid, "studentName": user2Name, "studentUID": user2UID, "studentSchool": studentSchool, "users":users
          ]
-         
          let db = Firestore.firestore().collection("conversations")
          db.addDocument(data: data) { (error) in
              if let error = error {
@@ -203,7 +210,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
 
-        let message = Message(id: UUID().uuidString, content: text, created: Timestamp(), senderID: currentUser.uid, senderName: "User"/*currentUser.displayName!*/)
+        let message = Message(id: UUID().uuidString, content: text, created: Timestamp(), senderID: currentUser.uid, senderName: currentUserName!)
         
           //messages.append(message)
           insertNewMessage(message)
@@ -218,7 +225,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     // MARK: - MessagesDataSource
     func currentSender() -> SenderType {
         
-        return Sender(id: Auth.auth().currentUser!.uid, displayName: Auth.auth().currentUser?.displayName ?? "Name not found")
+        return Sender(id: Auth.auth().currentUser!.uid, displayName: currentUserName!)
         
     }
     

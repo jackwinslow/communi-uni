@@ -32,8 +32,10 @@ class StudentDetailViewController: UIViewController {
         if segue.identifier == "ShowNewChat" {
             print("doing segue ****************************")
             let destination = segue.destination as! ContainerViewController
+            destination.currentUserName = "BOBBY"
             destination.user2Name = student.firstname
             destination.user2UID = student.uid
+            destination.studentSchool = student.school
             destination.hidesBottomBarWhenPushed = true
         }
     }

@@ -32,8 +32,10 @@ class MessageListViewController: UIViewController {
             print("doing segue ****************************")
             let destination = segue.destination as! ContainerViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow!
-            destination.user2Name = conversations.conversationArray[selectedIndexPath.row].firstname
-            destination.user2UID = conversations.conversationArray[selectedIndexPath.row].id
+            destination.currentUserName = "Nick"
+            destination.user2Name = conversations.conversationArray[selectedIndexPath.row].studentName
+            destination.user2UID = conversations.conversationArray[selectedIndexPath.row].studentUID
+            destination.studentSchool = conversations.conversationArray[selectedIndexPath.row].studentSchool
             destination.hidesBottomBarWhenPushed = true
         }
     }
@@ -48,7 +50,7 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConvCell", for: indexPath) as! MessageListTableViewCell
-        cell.studentNameLabel.text = conversations.conversationArray[indexPath.row].firstname
+        cell.studentNameLabel.text = conversations.conversationArray[indexPath.row].studentName
         return cell
     }
     
