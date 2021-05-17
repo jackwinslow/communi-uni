@@ -10,10 +10,12 @@ import UIKit
 class ProfileViewController: UIViewController {
     @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var userFirstNameLabel: UILabel!
-    @IBOutlet weak var userInterestsTextView: UITextView!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     let userDefault = UserDefaults.standard
+    
+    let firstname = UserDefaults.standard.string(forKey: "userFirstName")
+    let lastname = UserDefaults.standard.string(forKey: "userLastName")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +24,8 @@ class ProfileViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
-
-        userInterestsTextView.layer.borderWidth = 0.5
-        userInterestsTextView.layer.cornerRadius = 10
-        userInterestsTextView.layer.borderColor = UIColor(named: "PrimaryColor")?.cgColor
+        
+        userNameLabel.text = "\(firstname!) \(lastname!)"
     }
     
     // Call to send user back to welcome screen
@@ -44,6 +44,8 @@ class ProfileViewController: UIViewController {
         self.userDefault.set(false, forKey: "usersignedin")
         self.userDefault.set("", forKey: "userEmail")
         self.userDefault.set("", forKey: "userPassword")
+        self.userDefault.set("", forKey: "userFirstName")
+        self.userDefault.set("", forKey: "userLastName")
         self.userDefault.synchronize()
         
         transitionToWelcome()

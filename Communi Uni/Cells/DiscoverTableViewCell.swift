@@ -11,7 +11,8 @@ class DiscoverTableViewCell: UITableViewCell {
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-
+    @IBOutlet weak var availableStudentsLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

@@ -11,6 +11,9 @@ import Firebase
 class MessageListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    let firstname = UserDefaults.standard.string(forKey: "userFirstName")
+    let lastname = UserDefaults.standard.string(forKey: "userLastName")
+    
     var conversations: Conversations!
     
     override func viewDidLoad() {
@@ -32,7 +35,7 @@ class MessageListViewController: UIViewController {
             print("doing segue ****************************")
             let destination = segue.destination as! ContainerViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow!
-            destination.currentUserName = "Nick"
+            destination.currentUserName = firstname!
             destination.user2Name = conversations.conversationArray[selectedIndexPath.row].studentName
             destination.user2UID = conversations.conversationArray[selectedIndexPath.row].studentUID
             destination.studentSchool = conversations.conversationArray[selectedIndexPath.row].studentSchool

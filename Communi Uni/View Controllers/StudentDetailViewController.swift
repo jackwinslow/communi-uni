@@ -13,6 +13,9 @@ class StudentDetailViewController: UIViewController {
     @IBOutlet weak var interestsTextField: UITextView!
     @IBOutlet weak var communicateButton: UIButton!
     
+    let firstname = UserDefaults.standard.string(forKey: "userFirstName")
+    let lastname = UserDefaults.standard.string(forKey: "userLastName")
+    
     var student: Student!
     
     override func viewDidLoad() {
@@ -32,7 +35,7 @@ class StudentDetailViewController: UIViewController {
         if segue.identifier == "ShowNewChat" {
             print("doing segue ****************************")
             let destination = segue.destination as! ContainerViewController
-            destination.currentUserName = "BOBBY"
+            destination.currentUserName = firstname!
             destination.user2Name = student.firstname
             destination.user2UID = student.uid
             destination.studentSchool = student.school

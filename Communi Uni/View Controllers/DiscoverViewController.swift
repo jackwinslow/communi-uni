@@ -48,6 +48,7 @@ extension DiscoverViewController: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiscoverCell", for: indexPath) as! DiscoverTableViewCell
         cell.nameLabel.text = schools.schoolArray[indexPath.row].name
         cell.locationLabel.text = schools.schoolArray[indexPath.row].location
+        cell.availableStudentsLabel.text = "\(schools.schoolArray[indexPath.row].studentCount) students available to message"
         return cell
     }
     
